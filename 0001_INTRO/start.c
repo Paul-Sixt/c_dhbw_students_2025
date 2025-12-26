@@ -1,1 +1,6 @@
-// say hello world in your terminal / test yout setup //
+#include<stdio.h>
+
+int main() {
+	printf("Hello World\n");
+	return 0;
+}
