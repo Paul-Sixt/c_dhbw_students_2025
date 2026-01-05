@@ -14,9 +14,9 @@ int main()
 
     int *yourPointer = myPointer;
 
-    printf("\n\nAddress of aValue:/t%p", &aValue);
-    printf("\nAddress of myPointer:/t%p", myPointer);
-    printf("\nAddress of yourPointer:/t%p", yourPointer);
+    printf("\n\nAddress of aValue:\t\t\t\t%p", &aValue);
+    printf("\nAddress of myPointer:\t\t\t\t%p", &myPointer);
+    printf("\nAddress of yourPointer:\t\t\t\t%p", &yourPointer);
 
     return 0;
 }
