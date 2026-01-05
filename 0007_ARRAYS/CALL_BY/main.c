@@ -1,8 +1,17 @@
 #include <stdio.h>
 
 // Call by Reference function
+void printMemoryAddressAndValue(float *value)
+{
+    printf("\nMemory Address: \t%p", value);
+    printf("\nValue: \t%.2f", *value);
+}
 
 // Call by Value function
+int addValue(float a, float b)
+{
+    return a + b;
+}
 
 int main()
 {
@@ -11,7 +20,7 @@ int main()
     printMemoryAddressAndValue(&myFloat);
 
     float userInput = 0.0f;
-    printf("Enter a value (float) to add: ");
+    printf("\nEnter a value (float) to add: ");
     scanf("%f",&userInput);
 
     float newValue = addValue(myFloat, userInput);
