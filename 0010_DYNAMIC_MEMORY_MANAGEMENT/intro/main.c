@@ -3,31 +3,28 @@
 
 int main()
 {
-    size_t lenght = 3;
-    size_t memoryReq = lenght * sizeof(int);
+    size_t length = 3;
+    size_t memoryReq = length * sizeof(int);
 
-    printf("\nadresse of lenght: %p", (void*)&lenght);
+    printf("\nadress of length: %p", (void*)&length);
 
-    printf("\nsizeof(int): %llu", sizeof(int));
-    printf("\nmemoryReq: %zu", memoryReq);
+    printf("\nsizeof(int): %lu", sizeof(int));
+    printf("\nmemoryReg: %ld", memoryReq);
 
     int *heapArray = malloc(memoryReq);
 
-    for (size_t i = 0; i < lenght; i++)
+    for(size_t i = 0; i < length; i++)
     {
-        heapArray[i] = (int)i*100;
+        heapArray[i] = i * 100;
     }
 
-    for (size_t i = 0; i < lenght; i++)
+    for(size_t i = 0; i < length; i++)
     {
-        printf("\nheapArray[%lld]: %d", i, heapArray[i]);
-        printf("\nadress of heapArray[%lld]: %p", i, (void*)&heapArray[i]);
+        printf("\nheapArry[%ld]: %d", i, heapArray[i]);
     }
 
     free(heapArray);
-    heapArray = (void*)0; // == NULL
-
-    // inf. time to run
+    heapArray = NULL;
 
     return 0;
 }
