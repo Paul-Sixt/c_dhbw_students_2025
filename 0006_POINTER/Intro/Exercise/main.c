@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int aValue = 42;
+
     int *myPointer = &aValue;
 
-    printf("\nInitial value:\t\t\t\t\t%d", aValue);
-    printf("\nValue through pointer:\t\t\t\t%d", *myPointer);
+    printf("Initial value: \t\t\t\t%d\n", aValue);
+    printf("Value through pointer: \t\t\t%d\n", *myPointer);
 
     *myPointer = 20;
-
-    printf("\nModified value of aValue through myPointer:\t%d", *myPointer);
+    printf("Modified value of aValue through myPointer: \t%d\n\n", *myPointer);
 
     int *yourPointer = myPointer;
-
-    printf("\n\nAddress of aValue:\t\t\t\t%p", &aValue);
-    printf("\nAddress of myPointer:\t\t\t\t%p", &myPointer);
-    printf("\nAddress of yourPointer:\t\t\t\t%p", &yourPointer);
+    *yourPointer = 99;
+    
+    printf("Address of aValue: \t\t%p\n", (void*)&aValue);
+    printf("Address of myPointer: \t\t%p\n", (void*)&myPointer);
+    printf("Address of yourPointer: \t%p\n", (void*)&yourPointer);
 
     return 0;
 }

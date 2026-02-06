@@ -2,32 +2,26 @@
 #include <stdio.h>
 
 int main() {
-    uint32_t inputNumber = 0;
+    uint32_t number;
+    uint32_t num_digits = 0;
+    uint32_t cross_sum = 0;
+    uint32_t tempNumber;
 
     printf("Please enter a unsinged integer: ");
-    scanf("%u", &inputNumber);
+    scanf("%u", &number);
+    tempNumber = number;
 
     // sum of digits
-    uint32_t numDigits = 0;
-    uint32_t tempNumber = inputNumber;
-
-    while (tempNumber) {
-        numDigits ++;
+    while(tempNumber > 0) {
         tempNumber /= 10;
+        num_digits++;
     }
-
-    printf("sum of digits: %u\n", numDigits);
+    printf("sum of digits: %u\n", num_digits);
 
     // cross sum
-    uint32_t crossSum = 0;
-    tempNumber = inputNumber;
-
-    for (size_t i = 0; i < (size_t)numDigits; i++) {
-        crossSum += tempNumber % 10;
-        tempNumber /= 10;
+    while(number > 0) {
+        cross_sum += number % 10;
+        number /= 10;
     }
-
-    printf("crossSum: %u\n", crossSum);
-
-    return 0;
+    printf("cross sum: %u\n", cross_sum);
 }
